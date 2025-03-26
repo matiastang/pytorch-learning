@@ -1,3 +1,11 @@
+# pytroch
+
+# 测试数据集
+data/
+
+# 模型文件
+models/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
