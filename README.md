@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2025-03-25 17:09:10
  * @LastEditors: matiastang
- * @LastEditTime: 2025-03-27 11:31:13
+ * @LastEditTime: 2025-03-27 14:55:49
  * @FilePath: /pytorch-learning/README.md
  * @Description: PyTorch Learning
 -->
@@ -34,6 +34,7 @@ uv 0.6.9 (3d9460278 2025-03-20)
 
 ### v0.0.3
 
+- 将手写的`0-9`数字的图片加入训练集进行训练，然后使用训练的模型测试，与未加入训练集时的结果做对比。
 - 添加**加载本地的手写图片，用训练好的模型进行预测**
 - 添加`0-9`数字的图片，用于测试
 

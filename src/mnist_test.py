@@ -2,7 +2,7 @@
 Author: matiastang
 Date: 2025-03-26 18:00:51
 LastEditors: matiastang
-LastEditTime: 2025-03-27 11:05:37
+LastEditTime: 2025-03-27 11:35:09
 FilePath: /pytorch-learning/src/mnist_test.py
 Description: 加载本地的手写图片，用训练好的模型进行预测
 '''
@@ -52,6 +52,7 @@ model.eval()  # 将模型设置为评估模式，禁用 dropout 和 batch normal
 # 推理
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 images, labels = next(iter(test_loader))  # 获取测试集的第一批数据
+# print(labels)可以看出这里的标签就是我们设置的目录，和图片是对应的
 images, labels = images.to(device), labels.to(device)  # 移动到 GPU 或 CPU 上
 outputs = model(images)  # 前向传播
 _, predicted = torch.max(outputs, 1)  # 获取预测结果

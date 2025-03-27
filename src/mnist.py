@@ -2,7 +2,7 @@
 Author: matiastang
 Date: 2025-03-26 15:27:16
 LastEditors: matiastang
-LastEditTime: 2025-03-26 17:57:34
+LastEditTime: 2025-03-27 14:31:35
 FilePath: /pytorch-learning/src/mnist.py
 Description: PyTorch 实现 MNIST 数据集手写数字识别
 '''
@@ -11,10 +11,23 @@ import torch  # PyTorch 的核心库，提供张量操作和自动微分功能�
 import torch.nn as nn  # 用于构建神经网络的模块。
 import torch.optim as optim  # 提供优化器，如 SGD、Adam 等
 import torchvision  # torchvision: 处理计算机视觉数据的库，包含 MNIST 数据集。
-import torchvision.transforms as transforms  # torchvision.transforms: 提供数据预处理的工具，如归一化、数据增强等。
+# import torchvision.transforms as transforms  # torchvision.transforms: 提供数据预处理的工具，如归一化、数据增强等。
+from torchvision import datasets, transforms
 import matplotlib.pyplot as plt  # matplotlib.pyplot: 用于绘制图像和图表的库。
+from torch.utils.data import ConcatDataset  # torch.utils.data: 提供数据集和数据加载器等工具。
 
 # 1. 加载 MNIST 数据集
+
+# 转换操作：将图像转换为 tensor，并归一化
+custom_transform = transforms.Compose([
+    transforms.Grayscale(num_output_channels=1),  # 转换为灰度图
+    transforms.RandomInvert(p=1.0),  # 颜色反转，确保 100% 反转（黑变白，白变黑）
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,)),
+])
+
+# 加载自定义数据集（ImageFolder 格式）
+custom_set = datasets.ImageFolder(root='./data/MNIST_TEST', transform=custom_transform)
 
 # 1.1 数据预处理设置
 transform = transforms.Compose([
@@ -29,6 +42,10 @@ trainset = torchvision.datasets.MNIST(
     transform=transform,  # transform：对数据集进行预处理。
 )
 # 1.2.2 加载训练数据集
+
+# 合并两个数据集
+trainset = ConcatDataset([custom_set, trainset])
+
 trainloader = torch.utils.data.DataLoader(
     trainset,  # trainset：训练数据集。
     batch_size=64,  # batch_size=64：每次训练使用 64 张图片。
@@ -42,6 +59,10 @@ testset = torchvision.datasets.MNIST(
     transform=transform,  # transform：对数据集进行预处理。
 )
 # 1.3.2 加载测试数据集
+
+# 合并两个数据集
+testset = ConcatDataset([custom_set, testset])
+
 testloader = torch.utils.data.DataLoader(
     testset,  # testset：测试数据集。
     batch_size=64,  # batch_size=64：每次测试使用 64 张图片。
@@ -122,8 +143,8 @@ outputs = mnist_model(images)  # 前向传播
 _, predicted = torch.max(outputs, 1)  # 获取预测结果
 
 # 可视化预测结果
-fig, axes = plt.subplots(1, 6, figsize=(12, 4))  # 创建一个 1x6 的子图
-for i in range(6):
+fig, axes = plt.subplots(1, 10, figsize=(12, 4))  # 创建一个 1x6 的子图
+for i in range(10):
     img = images[i].cpu().numpy().squeeze()  # 将张量转换为 NumPy 数组，并去除额外的维度
     axes[i].imshow(img, cmap='gray')  # 显示灰度图像
     axes[i].set_title(f'Pred: {predicted[i].item()}')  # 显示预测结果
