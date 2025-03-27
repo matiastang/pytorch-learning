@@ -477,7 +477,7 @@ wheels = [
 
 [[package]]
 name = "pytorch-learning"
-version = "0.0.3"
+version = "0.0.4"
 source = { virtual = "." }
 dependencies = [
     { name = "matplotlib" },

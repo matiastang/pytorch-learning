@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2025-03-25 17:09:10
  * @LastEditors: matiastang
- * @LastEditTime: 2025-03-27 16:39:51
+ * @LastEditTime: 2025-03-27 17:28:16
  * @FilePath: /pytorch-learning/README.md
  * @Description: PyTorch Learning
 -->
@@ -34,6 +34,7 @@ uv 0.6.9 (3d9460278 2025-03-20)
 
 ### v0.0.4
 
+- 添加**基于CIFAR10数据集的图形分类**
 - Tensor和Autograd熟悉
 
 ### v0.0.3

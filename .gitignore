@@ -2,6 +2,7 @@
 
 # 测试数据集
 data/MNIST
+data/cifar*
 
 # 模型文件
 models/
