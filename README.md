@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2025-03-25 17:09:10
  * @LastEditors: matiastang
- * @LastEditTime: 2025-03-27 14:55:49
+ * @LastEditTime: 2025-03-27 16:39:51
  * @FilePath: /pytorch-learning/README.md
  * @Description: PyTorch Learning
 -->
@@ -31,6 +31,10 @@ uv 0.6.9 (3d9460278 2025-03-20)
 ```
 
 ## 更新
+
+### v0.0.4
+
+- Tensor和Autograd熟悉
 
 ### v0.0.3
 
