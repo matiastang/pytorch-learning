@@ -2,7 +2,7 @@
  * @Author: matiastang
  * @Date: 2025-03-25 17:09:10
  * @LastEditors: matiastang
- * @LastEditTime: 2025-03-26 17:54:47
+ * @LastEditTime: 2025-03-27 11:31:13
  * @FilePath: /pytorch-learning/README.md
  * @Description: PyTorch Learning
 -->
@@ -31,6 +31,11 @@ uv 0.6.9 (3d9460278 2025-03-20)
 ```
 
 ## 更新
+
+### v0.0.3
+
+- 添加**加载本地的手写图片，用训练好的模型进行预测**
+- 添加`0-9`数字的图片，用于测试
 
 ### v0.0.2
 

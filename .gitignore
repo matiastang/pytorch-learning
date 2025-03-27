@@ -1,7 +1,7 @@
 # pytroch
 
 # 测试数据集
-data/
+data/MNIST
 
 # 模型文件
 models/

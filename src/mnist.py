@@ -2,9 +2,9 @@
 Author: matiastang
 Date: 2025-03-26 15:27:16
 LastEditors: matiastang
-LastEditTime: 2025-03-26 17:35:17
+LastEditTime: 2025-03-26 17:57:34
 FilePath: /pytorch-learning/src/mnist.py
-Description: MNIST 数据集的简单分类
+Description: PyTorch 实现 MNIST 数据集手写数字识别
 '''
 import time  # time: 提供时间相关的函数，如获取当前时间、计算时间差等。
 import torch  # PyTorch 的核心库，提供张量操作和自动微分功能。
