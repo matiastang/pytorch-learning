@@ -2,7 +2,7 @@
 Author: matiastang
 Date: 2025-03-27 16:21:07
 LastEditors: matiastang
-LastEditTime: 2025-03-27 16:32:12
+LastEditTime: 2025-04-08 11:06:41
 FilePath: /pytorch-learning/src/gradients.py
 Description: 自动微分，计算梯度
 '''
@@ -53,7 +53,7 @@ x = torch.randn(3, requires_grad=True)
 y = x ** 2
 while y.data.norm() < 1000:
     y = y * 2
-    
+
 print(y)
 # tensor([1060.9614,  154.1167,  566.1297], grad_fn=<MulBackward0>)
 

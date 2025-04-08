@@ -1,8 +1,12 @@
 # pytroch
 
 # 测试数据集
-data/MNIST
-data/cifar*
+# 忽略 data/ 目录下的所有内容
+data/*
+# 但不要忽略 MNIST_TEST 目录
+!data/MNIST_TEST/
+# 确保 MNIST_TEST 目录下的文件也被保留
+!data/MNIST_TEST/**/*
 
 # 模型文件
 models/
